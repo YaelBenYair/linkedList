@@ -70,7 +70,7 @@ for value in my_list:
     print(value)
 ```
     
-You can also use the **__getitem__** method to access elements by index.
+You can also use the **____getitem____** method to access elements by index.
 
 ```python
 value = my_list[2]
