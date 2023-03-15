@@ -24,12 +24,16 @@ my_list = LinkedList([1, 2, 3, 4])
 ```
 
 
+
+
 ### Appending an element
 To add an element to the end of a linked list, use the **append** method.
 
 ```python
 my_list.append(5)
 ```
+
+
 
 
 ### Inserting an element
@@ -46,12 +50,16 @@ my_list.insert_at(7)
 ```
 
 
+
+
 ### Removing an element
 To remove an element at a specific index in the linked list, use the **remove_from** method.
 
 ```python
 my_list.remove_from(3)
 ```
+
+
 
 
 ### Iterating over the list
@@ -69,6 +77,8 @@ value = my_list[2]
 ```
 
 
+
+
 ### Concatenating two linked lists
 To concatenate two linked lists, use the **+** operator.
 
@@ -76,6 +86,8 @@ To concatenate two linked lists, use the **+** operator.
 my_other_list = LinkedList([8, 9, 10])
 new_list = my_list + my_other_list
 ```
+
+
 
 
 ### Getting the length of the list
