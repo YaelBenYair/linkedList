@@ -10,7 +10,7 @@ from linked_list import LinkedList
 
 ## Usage
 
-###### Creating a linked list
+### Creating a linked list
 To create an empty linked list, simply instantiate a new **LinkedList** object.
 
 ```python
