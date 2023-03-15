@@ -68,7 +68,7 @@ To iterate over the linked list, use the **for** loop.
 ```python
 for value in my_list:
     print(value)
-    ```
+```
     
 You can also use the **__getitem__** method to access elements by index.
 
