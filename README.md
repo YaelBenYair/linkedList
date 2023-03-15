@@ -23,14 +23,14 @@ You can also initialize a linked list with a list of values by passing an iterab
 my_list = LinkedList([1, 2, 3, 4])
 ```
 
-###### Appending an element
+### Appending an element
 To add an element to the end of a linked list, use the **append** method.
 
 ```python
 my_list.append(5)
 ```
 
-###### Inserting an element
+### Inserting an element
 To insert an element at a specific index in the linked list, use the **insert_at** method.
 
 ```python
@@ -43,14 +43,14 @@ If the index is not specified or is greater than the length of the list, the ele
 my_list.insert_at(7)
 ```
 
-###### Removing an element
+### Removing an element
 To remove an element at a specific index in the linked list, use the **remove_from** method.
 
 ```python
 my_list.remove_from(3)
 ```
 
-###### Iterating over the list
+### Iterating over the list
 To iterate over the linked list, use the **for** loop.
 
 ```python
@@ -64,7 +64,7 @@ You can also use the **__getitem__** method to access elements by index.
 value = my_list[2]
 ```
 
-###### Concatenating two linked lists
+### Concatenating two linked lists
 To concatenate two linked lists, use the **+** operator.
 
 ```python
@@ -72,7 +72,7 @@ my_other_list = LinkedList([8, 9, 10])
 new_list = my_list + my_other_list
 ```
 
-###### Getting the length of the list
+### Getting the length of the list
 To get the length of the linked list, use the **len** function.
 
 ```python
