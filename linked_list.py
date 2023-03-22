@@ -174,6 +174,7 @@ class LinkedList():
         prev.next = nex
         nex.previous = prev
         self._len -= 1
+        del self._current_elem
 
 
 
