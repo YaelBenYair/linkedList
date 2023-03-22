@@ -174,9 +174,23 @@ class LinkedList():
         prev.next = nex
         nex.previous = prev
         self._len -= 1
+        del self._current_elem
 
+    def reverse(self):
+        new_list = LinkedList()
+        self._current_elem = self._end
+        for num in range(self._len):
+            new_list.append(self._current_elem.value)
+            self._current_elem = self._current_elem.previous
 
+        return new_list
 
+if __name__ == '__main__':
+    my_list = LinkedList([1, 2, 'abc', 'bla'])
+    print(my_list)
+
+    rev_list = my_list.reverse()
+    print(rev_list)
 
 
 
