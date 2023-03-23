@@ -5,48 +5,44 @@ from __future__ import annotations
 from typing import Optional, Iterable
 
 
+class LinkedList:
+    class Element:
+        def __init__(self, value=None):
+            """
+            This is the constructor for an Element object, which is a single node in the linked list.
+            It initializes the value of the element, its previous and next elements in the list.
+            It takes three optional arguments:
+            :param value: the value of the element
+            :param previous_elem: the previous element in the list
+            :param next_elem: the next element in the list
+            """
+            self._value = value
+            self._previous = None
+            self._next = None
 
-class Element():
-    def __init__(self, value=None, previous_elem: Optional[Element] = None, next_elem: Optional[Element] = None):
-        """
-        This is the constructor for an Element object, which is a single node in the linked list.
-        It initializes the value of the element, its previous and next elements in the list.
-        It takes three optional arguments:
-        :param value: the value of the element
-        :param previous_elem: the previous element in the list
-        :param next_elem: the next element in the list
-        """
-        self._value = value
-        self._previous = previous_elem
-        self._next = next_elem
+        @property
+        def next(self):
+            return self._next
 
-    @property
-    def next(self):
-        return self._next
+        @next.setter
+        def next(self, value):
+            self._next = value
 
-    @next.setter
-    def next(self, value):
-        self._next = value
+        @property
+        def previous(self):
+            return self._previous
 
-    @property
-    def previous(self):
-        return self._previous
+        @previous.setter
+        def previous(self, value):
+            self._previous = value
 
-    @previous.setter
-    def previous(self, value):
-        self._previous = value
+        @property
+        def value(self):
+            return self._value
 
-    @property
-    def value(self):
-        return self._value
-
-    @value.setter
-    def value(self, value):
-        self._value = value
-
-
-
-class LinkedList():
+        @value.setter
+        def value(self, value):
+            self._value = value
 
     def __init__(self, val_iter: Optional[Iterable] = []):
         """
@@ -80,6 +76,7 @@ class LinkedList():
                 str_text += f" {link},"
             count += 1
         return str_text
+
 
     def __iter__(self):
         self._current_elem = self._first
@@ -122,7 +119,7 @@ class LinkedList():
         """
         This method adds a new element to the end of the linked list.
         """
-        elem_val = Element(value=value)
+        elem_val = self.Element(value=value)
         if not self._first:
             self._first = elem_val
 
@@ -147,7 +144,7 @@ class LinkedList():
         if index is None or index > self._len - 1:
             self.append(value)
         else:
-            elem_val = Element(value)
+            elem_val = self.Element(value)
             self._current_elem = self._first
             for inx in range(index):
                 self._current_elem = self._current_elem.next
@@ -185,12 +182,65 @@ class LinkedList():
 
         return new_list
 
+    # def reverse_without_prev(self):
+    #     new_list = LinkedList()
+    #     new_list._end = self._first
+    #     new_list._first = self._first
+    #     new_list._current_elem = self._first
+    #
+    #     for num in range(self._len - 1):
+    #         new_list._current_elem = new_list._current_elem.next
+    #         new_list._first.previous = new_list._current_elem
+    #         new_list._current_elem.next = new_list._first
+    #         new_list._first = new_list._current_elem
+    #
+    #     return new_list
+
+    def reverse_without_prev(self):
+        new_list = LinkedList()
+
+        new_list._len = self._len
+        self._current_elem = self._first
+
+        new_list._current_elem = new_list.Element(value=self._current_elem.value)
+        new_list._end = new_list._current_elem
+        new_list._first = new_list._current_elem
+
+        for num in range(self._len -1):
+            self._current_elem = self._current_elem.next
+            print(self._current_elem.value)
+            new_list._current_elem = new_list.Element(value=self._current_elem.value)
+            new_list._current_elem.next = new_list._first
+            new_list._first.previous = new_list._current_elem
+            new_list._first = new_list._current_elem
+
+            print(new_list._first.value)
+
+        return new_list
+
+
+
+
+
+
 if __name__ == '__main__':
     my_list = LinkedList([1, 2, 'abc', 'bla'])
     print(my_list)
 
+    print()
+
     rev_list = my_list.reverse()
     print(rev_list)
+    print(my_list)
+
+    print()
+
+    new_rev_list = my_list.reverse_without_prev()
+    print(new_rev_list)
+    print(my_list)
+
+    for i in new_rev_list:
+        print(i)
 
 
 
