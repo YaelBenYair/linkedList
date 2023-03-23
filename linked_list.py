@@ -182,20 +182,6 @@ class LinkedList:
 
         return new_list
 
-    # def reverse_without_prev(self):
-    #     new_list = LinkedList()
-    #     new_list._end = self._first
-    #     new_list._first = self._first
-    #     new_list._current_elem = self._first
-    #
-    #     for num in range(self._len - 1):
-    #         new_list._current_elem = new_list._current_elem.next
-    #         new_list._first.previous = new_list._current_elem
-    #         new_list._current_elem.next = new_list._first
-    #         new_list._first = new_list._current_elem
-    #
-    #     return new_list
-
     def reverse_without_prev(self):
         new_list = LinkedList()
 
